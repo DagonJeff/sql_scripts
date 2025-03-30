@@ -29,5 +29,5 @@ CREATE TABLE IF NOT EXISTS demonstracoes_contabeis (
     cd_conta_contabil VARCHAR(20),
     descricao VARCHAR(255),
     vl_saldo_inicial DECIMAL(15,2),
-    vl_saldo_final DECIMAL(15,2),
-)
+    vl_saldo_final DECIMAL(15,2)
+);

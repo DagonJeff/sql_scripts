@@ -1,6 +1,12 @@
--- Importação dos dados para a tabela operadoras_dados
-LOAD DATA INFILE 'dados_cadastrais_operadoras/Relatorio_cadop.csv'
-INTO TABLE operadoras
+-- Importação dos dados para a tabela operadoras_dadosLLOAD DATA INFILE 'dados_cadastrais_operadoras/Relatorio_cadop.csv'
+-- Verifique se o MySQL permite `LOAD DATA LOCAL INFILE`
+SHOW VARIABLES LIKE 'local_infile';
+
+-- Habilite `local_infile` se necessário
+SET GLOBAL local_infile = 1;
+
+LOAD DATA LOCAL INFILE 'dados_cadastrais_operadoras/Relatorio_cadop.csv'
+INTO TABLE operadoras_dados
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -10,7 +16,7 @@ IGNORE 1 LINES
 
 
 -- Importação dos dados para a tabelas demonstracoes_contabeis do ano de 2023
-LOAD DATA INFILE 'demonstracoes_contabeis/2023/1T2023.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2023/1T2023.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -18,7 +24,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
 
-LOAD DATA INFILE 'demonstracoes_contabeis/2023/2t2023.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2023/2t2023.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -26,7 +32,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
 
-LOAD DATA INFILE 'demonstracoes_contabeis/2023/3T2023.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2023/3T2023.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -34,7 +40,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
 
-LOAD DATA INFILE 'demonstracoes_contabeis/2023/4T2023.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2023/4T2023.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -44,7 +50,7 @@ IGNORE 1 LINES
 
 
 -- Importação dos dados para a tabelas demonstracoes_contabeis do ano de 2024
-LOAD DATA INFILE 'demonstracoes_contabeis/2024/1T2024.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2024/1T2024.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -52,7 +58,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
 
-LOAD DATA INFILE 'demonstracoes_contabeis/2024/2T2024.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2024/2T2024.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -60,7 +66,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
 
-LOAD DATA INFILE 'demonstracoes_contabeis/2024/3T2024.csv'
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2024/3T2024.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -68,7 +74,8 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
 
-LOAD DATA INFILE 'demonstracoes_contabeis/2024/4T2024.csv'
+
+LOAD DATA LOCAL INFILE 'demonstracoes_contabeis/2024/4T2024.csv'
 INTO TABLE demonstracoes_contabeis
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
