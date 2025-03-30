@@ -78,7 +78,7 @@ Execute o script `analytical_query.sql` para realizar a análise dos dados.
 SOURCE sql_scripts/scripts/analytical_query.sql;
 ```
 Obs.:
-Altere o caminho relativo `'relative_path/to/your/file_query.sql'` para o caminho completo do arquivo no seu sistema na execução dos comandos "SOURCE" no prompt de comando.
+Altere o caminho relativo `'relative_path/to/your/file_query.sql'` para o caminho completo do arquivo no seu sistema na execução dos comandos `SOURCE` no prompt de comando.
 
 ## Compatibilidade
 
