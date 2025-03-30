@@ -1,10 +1,11 @@
--- Importação dos dados para a tabela operadoras_dadosLLOAD DATA INFILE 'dados_cadastrais_operadoras/Relatorio_cadop.csv'
 -- Verifique se o MySQL permite `LOAD DATA LOCAL INFILE`
 SHOW VARIABLES LIKE 'local_infile';
 
 -- Habilite `local_infile` se necessário
 SET GLOBAL local_infile = 1;
 
+
+-- Importação dos dados para a tabela operadoras_dadosLLOAD DATA INFILE 'dados_cadastrais_operadoras/Relatorio_cadop.csv'
 LOAD DATA LOCAL INFILE 'dados_cadastrais_operadoras/Relatorio_cadop.csv'
 INTO TABLE operadoras_dados
 FIELDS TERMINATED BY ';'

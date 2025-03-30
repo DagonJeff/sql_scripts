@@ -1,3 +1,5 @@
+SET NAMES 'utf8mb4';
+
 -- Último Trimestre
 SELECT
     od.razao_social,
